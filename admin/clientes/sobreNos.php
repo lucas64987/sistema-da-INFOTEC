@@ -5,7 +5,6 @@ require_once $_SERVER['DOCUMENT_ROOT']. "/includes/cabecalho.php";
 <html>
 <head>
     <title>logo infotec</title>
-    <img src="img/logo.pgn.png" alt="paisagem" width="200" class="float-right">
     <title>sobre nós</title>
     <style>
         .centro {
@@ -53,5 +52,5 @@ require_once $_SERVER['DOCUMENT_ROOT']. "/includes/cabecalho.php";
 </html>
 
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']. "/includes/cabecalhoPrincipal.php";
+require_once $_SERVER['DOCUMENT_ROOT']. "/includes/rodape.php";
 ?>
