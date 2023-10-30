@@ -6,7 +6,7 @@
     <title>INFOTEC</title>
     <meta name="description" content="sistema da loja infotec">
     <meta name="keywords" content="sistema da loja infotec">
-    <meta name="author" content="Lucas Ramos">
+    <meta name="author" content="LUCAS, VITOR, MATHEUS">
 </head>
 
 <body>

@@ -2,7 +2,7 @@
 
 class DBConexao{
     private $host = "localhost";
-    private $dbname ="biblioteca";
+    private $dbname ="infotec";
     private $username = "root";
     private $password = "senac2023";
 
