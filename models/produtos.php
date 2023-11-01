@@ -53,14 +53,14 @@ class produto
     public function cadastrar($dados)
     {
         try {
-            $query = "INSERT * INTO {$this->table} (nome, descricao , quantidade, preco, cod_produto, categoria,') VALUES (:nome, :descricao, :quantidade, :preco, :cod_produto, :categoria)";
+            $query = "INSERT INTO {$this->table} (nome, descricao , quantidade, preco, categoria, cod_produto) VALUES (:nome, :descricao, :quantidade, :preco, :categoria, :cod_produto)";
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':nome', $dados['nome']);
             $stmt->bindParam(':descricao', $dados['descricao']);
             $stmt->bindParam(':quantidade', $dados['quantidade']);
             $stmt->bindParam(':preco', $dados['preco']);        
-            $stmt->bindParam(':cod_produto', $dados['cod_produto']);
             $stmt->bindParam(':categoria', $dados['categoria']);
+            $stmt->bindParam(':cod_produto', $dados['cod_produto']);
             $stmt->execute();
             $_SESSION['sucesso'] = "cadastro realizado com sucesso";
             return true;
