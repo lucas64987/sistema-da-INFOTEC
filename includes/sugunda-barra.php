@@ -8,7 +8,9 @@
         <a class="nav-link" href="#">PC</a>
         <a class="nav-link" href="#">CPU</a>
         <a class="nav-link" href="#">Memoria Ram</a>
-        <a class="nav-link" href="#">Fonte HD SSD</a>
+        <a class="nav-link" href="#">Fonte</a>
+        <a class="nav-link" href="#">HD</a>
+        <a class="nav-link" href="#">SSD</a>
         <a class="nav-link" href="#"></a>
     </div>
 </nav>

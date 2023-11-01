@@ -7,13 +7,8 @@
 
     <style>
         a {
-
-
-
             color: #ffffff;
-
-
-
+            text-decoration: none;
         }
     </style>
 
@@ -29,7 +24,7 @@
 
     <br>
 
-    <a href="/admin/clientes/sobreNos.php">SOBRE NÓS</a>
+    <a href="/admin/clientes/sobre-nos.php">SOBRE NÓS</a>
 
 
 

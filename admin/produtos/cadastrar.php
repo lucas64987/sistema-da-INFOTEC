@@ -7,7 +7,7 @@
 
     $produtocontroller = new produtoController();
 
-    $produtocontroller->cadastrarproduto();
+    $produtocontroller->cadastrarProduto();
 
 
 ?>
@@ -23,7 +23,7 @@
 
         <div class="col-md-6">
             <label for="descricao" class ="form-label">Descrição</label>
-            <input type="text" name="descricao" id="descricao" class="form-control"required>
+            <input type="int" name="descricao" id="descricao" class="form-control"required>
         </div>
 
         <div class="col-md-6">

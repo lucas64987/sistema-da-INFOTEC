@@ -38,34 +38,50 @@ $produto = $produtoController->editarproduto();
 
         <div class="col-md-6">
 
-            <label for="descricao" class="form-label">Email</label>
+            <label for="descricao" class="form-label">descricao</label>
 
-            <input type="text" name="descricao" id="descricao" class="form-control"required value="<?=  $produto->descricao?>">
+            <input type="int" name="descricao" id="descricao" class="form-control"required value="<?=  $produto->descricao?>">
 
         </div>
 
         <div class="col-md-6">
 
-            <label for="senha" class="form-label">Senha</label>
+            <label for="quantidade" class="form-label">quantidade</label>
 
-            <input type="password" name="senha" id="senha" class="form-control">
-            <p class="text-secondary">caso queira manter a senha, deixe o campo em branco.</p>
+            <input type="int" name="quantidade" id="quantidade" class="form-control"required value="<?=  $produto->quantidade?>">
 
         </div>
 
+        <div class="col-md-6">
+
+            <label for="preco" class="form-label">preco</label>
+
+            <input type="decimal" name="preco" id="preco" class="form-control"required value="<?=  $produto->preco?>">
+
+        </div>
+
+        <div class="col-md-6">
+
+            <label for="cod_produto" class="form-label">cod_produto</label>
+
+            <input type="int" name="cod_produto" id="cod_produto" class="form-control"required value="<?=  $produto->cod_produto?>">
+
+        </div>
+
+
         <div class="col-md-8">
 
-            <label for="perfil" class="form-label">Perfil</label>
+            <label for="categoria" class="form-label">categoria</label>
 
-            <select name="perfil" class="form-select" id="perfil"required>
+            <select name="categoria" class="form-select" id="categoria"required>
 
-                <option>Selecione o Perfil</option>
+                <option>Selecione a categoria do produto</option>
 
-                <option value="usuario"
-                <?=($usuario->perfil == "usuario")?"selected":"";?>>Usuario</option>
+                <option value="hardware"
+                <?=($produto->categoria == "hardware")?"selected":"";?>>hardware</option>
 
-                <option value="administrador"
-                <?=($usuario->perfil == "adiministrador")?"selected":"";?>>Administrador</option>
+                <option value="perifericos"
+                <?=($produto->categoria == "periferico")?"selected":"";?>>periferico</option>
 
             </select>
 
