@@ -1,3 +1,9 @@
+<?php
+
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/cabecalho.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/sugunda-barra.php";
+    ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,20 +17,20 @@
 
 <body>
     <title>INFOTEC</title>
-    <?php
-
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/cabecalho.php";
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/sugunda-barra.php";
-    ?>
-
     
+    
+
+   
+  
 
 
     </body>
-    <?php
-    require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/rodape.php";
-    ?>
+    
 
 
 </html>
+
+<?php
+    require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/rodape.php";
+    ?>
 
