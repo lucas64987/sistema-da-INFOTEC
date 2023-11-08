@@ -33,7 +33,7 @@ class Clientecontroller{
   }
   public function editarcliente(){
 
-    $id_usario=$_GET['id_clientes'];
+    $id_clientes=$_GET['id_clientes'];
  
     if($_SERVER['REQUEST_METHOD']== 'POST'){
 
@@ -42,7 +42,7 @@ class Clientecontroller{
         $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
       }else{
         //manter senha antiga
-        $clientes = $this->clienteModel1->buscar($id_usario);
+        $clientes = $this->clienteModel1->buscar($id_clientes);
         $senha =$clientes->senha;
       }
        $dados=[
@@ -51,7 +51,7 @@ class Clientecontroller{
  
           'email'=>$_POST['email'],
  
-          'senha'=> password_hash ($_POST['senha'],PASSWORD_DEFAULT),
+          'senha'=> password_hash($_POST['senha'],PASSWORD_DEFAULT),
  
           'cpf'=>$_POST['cpf'],
 

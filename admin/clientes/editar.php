@@ -4,88 +4,81 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/cabecalho.php";
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/controllers/produtocontroller.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/controllers/clientecontroller.php";
 
  
 
-$produtoController = new produtocontroller();
+$clienteController = new Clientecontroller();
 
  
 
-$produto = $produtoController->editarproduto();
+$clientes = $clienteController->editarcliente();
 
  
 
-//var_dump($usuario);
+//var_dump($clientes);
 
 ?>
 
 <main class="container mt-3 mb-3">
 
-    <h1>Editar informações do produto</h1>
+    <h1>Editar informações da conta</h1>
 
  
 
-    <form action="editar.php?id_produto=<?=$produto->id_produto ?>" method="post" class="row g-3">
+    <form action="editar.php?id_clientes=<?=$clientes->id_clientes ?>" method="post" class="row g-3">
 
         <div class="col-md-12">
 
             <label for="nome" class="form-label">Nome</label>
 
-            <input type="text" name="nome" id="nome" class="form-control" required value="<?=$produto->nome ?>">
+            <input type="text" name="nome" id="nome" class="form-control" required value="<?=$clientes->nome ?>">
 
         </div>
 
         <div class="col-md-6">
 
-            <label for="descricao" class="form-label">descricao</label>
+            <label for="email" class="form-label">Email</label>
 
-            <input type="int" name="descricao" id="descricao" class="form-control"required value="<?=  $produto->descricao?>">
-
-        </div>
-
-        <div class="col-md-6">
-
-            <label for="quantidade" class="form-label">quantidade</label>
-
-            <input type="int" name="quantidade" id="quantidade" class="form-control"required value="<?=  $produto->quantidade?>">
+            <input type="text" name="email" id="email" class="form-control"required value="<?=  $clientes->email?>">
 
         </div>
 
         <div class="col-md-6">
 
-            <label for="preco" class="form-label">preco</label>
+        <label for="senha" class="form-label">Senha</label>
 
-            <input type="decimal" name="preco" id="preco" class="form-control"required value="<?=  $produto->preco?>">
+            <input type="password" name="senha" id="senha" class="form-control">
+            <p class="text-secondary">caso queira manter a senha, deixe o campo em branco.</p>
 
         </div>
 
         <div class="col-md-6">
 
-            <label for="cod_produto" class="form-label">cod_produto</label>
+            <label for="cpf" class="form-label">CPF</label>
 
-            <input type="int" name="cod_produto" id="cod_produto" class="form-control"required value="<?=  $produto->cod_produto?>">
+            <input type="int" name="cpf" id="cpf" class="form-control"required value="<?=  $clientes->cpf?>">
+
+        </div>
+
+
+        <div class="col-md-6">
+
+            <label for="endereco" class="form-label">endereco</label>
+
+            <input type="text" name="endereco" id="endereco" class="form-control"required value="<?=  $clientes->endereco?>">
 
         </div>
 
+        <div class="col-md-6">
 
-        <div class="col-md-8">
+            <label for="telefone" class="form-label">telefone</label>
 
-            <label for="categoria" class="form-label">categoria</label>
-
-            <select name="categoria" class="form-select" id="categoria"required>
-
-                <option>Selecione a categoria do produto</option>
-
-                <option value="hardware"
-                <?=($produto->categoria == "hardware")?"selected":"";?>>hardware</option>
-
-                <option value="perifericos"
-                <?=($produto->categoria == "periferico")?"selected":"";?>>periferico</option>
-
-            </select>
+            <input type="int" name="telefone" id="telefone" class="form-control"required value="<?=  $clientes->telefone?>">
 
         </div>
+
+       
 
         <div class="col-12">
 

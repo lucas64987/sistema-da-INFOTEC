@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/database/DBConexao.php";
 class Cliente
 {
     protected $db;
-    protected $table = "cadastro_clentes";
+    protected $table = "clientes";
 
     public function __construct()
     {
@@ -14,7 +14,7 @@ class Cliente
     /** 
      * buscar registro unico
      * @param int $id
-     * @return produto|null
+     * @return cliente|null
      */
     public function buscar($id_clientes)
     {
@@ -53,7 +53,7 @@ class Cliente
     public function cadastrar($dados)
     {
         try {
-            $query = "INSERT INTO {$this->table} (nome, email , senha, cpf, endereco, telefone) VALUES (:nome, :email, :senha, :cpf, :endereco, :telefone)";
+            $query = "INSERT INTO {$this->table} (nome, email, senha, cpf, endereco, telefone) VALUES (:nome, :email, :senha, :cpf, :endereco, :telefone)";
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':nome', $dados['nome']);
             $stmt->bindParam(':email', $dados['email']);
@@ -66,7 +66,7 @@ class Cliente
             return true;
         } catch (PDOException $e) {
             echo "Erro ao cadastrar: " . $e->getMessage();
-            $_SESSION['erro'] = " erro no cadastro";
+            $_SESSION['erro'] = " erro ao cadastrar produto";
             return false;
         }
     }
@@ -92,7 +92,7 @@ class Cliente
             $stmt->bindParam(':telefone', $dados['telefone']);
             $stmt->bindParam('id_clientes', $id_clientes, PDO::PARAM_INT);
             $stmt->execute();
-            $_SESSION['sucesso'] = "dados editado com sucesso";
+            $_SESSION['sucesso'] = "Produto editado com sucesso";
             return true;
         } catch (PDOException $e) {
             echo "erro na edição de dados:" . $e->getMessage();

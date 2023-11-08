@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `cadastro_clentes`
 --
 
-CREATE TABLE `cadastro_clentes` (
+CREATE TABLE `clientes` (
   `id_clientes` int NOT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(15) NOT NULL,
@@ -172,8 +172,8 @@ CREATE TABLE `registo_pedidos` (
 --
 -- Indexes for table `cadastro_clentes`
 --
-ALTER TABLE `cadastro_clentes`
-  ADD PRIMARY KEY (`id_clentes`);
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id_clientes`);
 
 --
 -- Indexes for table `categorias`
@@ -212,8 +212,8 @@ ALTER TABLE `registo_pedidos`
 --
 -- AUTO_INCREMENT for table `cadastro_clentes`
 --
-ALTER TABLE `cadastro_clentes`
-  MODIFY `id_clentes` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `clientes`
+  MODIFY `id_clientes` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `categorias`
