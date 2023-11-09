@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cadastro_clentes`
+-- Table structure for table `clientes`
 --
 
 CREATE TABLE `clientes` (

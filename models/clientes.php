@@ -66,7 +66,7 @@ class Cliente
             return true;
         } catch (PDOException $e) {
             echo "Erro ao cadastrar: " . $e->getMessage();
-            $_SESSION['erro'] = " erro ao cadastrar produto";
+            $_SESSION['erro'] = " erro ao cadastrar seu perfil";
             return false;
         }
     }
@@ -92,10 +92,10 @@ class Cliente
             $stmt->bindParam(':telefone', $dados['telefone']);
             $stmt->bindParam('id_clientes', $id_clientes, PDO::PARAM_INT);
             $stmt->execute();
-            $_SESSION['sucesso'] = "Produto editado com sucesso";
+            $_SESSION['sucesso'] = "perfil editado com sucesso";
             return true;
         } catch (PDOException $e) {
-            echo "erro na edição de dados:" . $e->getMessage();
+            echo "erro na edição do perfil:" . $e->getMessage();
             return false;
         }
     }

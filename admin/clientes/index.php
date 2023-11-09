@@ -11,7 +11,7 @@
 ?>
 
     <MAIN class="container mt-3 mb-3">
-        <h1>lista de produtos <a href="cadastrar.php" class= "btn btn-primary float-end">cadastrar</a></h1>
+        <h1>lista de clientes cadastrados <a href="cadastrarCliente.php" class= "btn btn-primary float-end">cadastrar</a></h1>
         
         
         <?php include_once $_SERVER ['DOCUMENT_ROOT']."/includes/alerta.php" ?>
@@ -38,7 +38,7 @@
 
         $clientes = $clientecontroller->listarcliente();
 
-        //var_dump($usuario);
+        var_dump($clientes);
         foreach($clientes as $dados):
     
 
