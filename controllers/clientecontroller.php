@@ -51,7 +51,7 @@ class Clientecontroller{
  
           'email'=>$_POST['email'],
  
-          'senha'=> password_hash($_POST['senha'],PASSWORD_DEFAULT),
+          'senha'=> password_hash ($_POST['senha'],PASSWORD_DEFAULT),
  
           'cpf'=>$_POST['cpf'],
 

@@ -38,7 +38,7 @@
 
         $clientes = $clientecontroller->listarcliente();
 
-        var_dump($clientes);
+        //var_dump($clientes);
         foreach($clientes as $dados):
     
 
