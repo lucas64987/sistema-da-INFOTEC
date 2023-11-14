@@ -32,8 +32,8 @@
         </div>
 
         <div class="col-md-6">
-            <label for="preco" class ="form-label">Preço</label>
-            <input type="decimal" name="preco" id="preco" class="form-control"required>
+            <label for="preco" class="form-label">Preço</label>
+            <input type="number" name="preco" id="preco" class="form-control" step="0.01" required>
         </div>
 
         <div class="col-md-6">

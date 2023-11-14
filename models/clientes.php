@@ -71,6 +71,7 @@ class Cliente
         }
     }
 
+
     /** 
      * editar
      * @param int $id

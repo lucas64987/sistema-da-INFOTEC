@@ -17,20 +17,23 @@ class produtocontroller{
   public function cadastrarProduto(){
     if($_SERVER['REQUEST_METHOD']==='POST'){
       
-      $dados =[
-        'nome' => $_POST['nome'],
-        'descricao'=> $_POST['descricao'],
-        'quantidade'=> $_POST['quantidade'],
-        'preco'=> $_POST['preco'],
-        'cod_produto'=> $_POST['cod_produto'],
-        'categoria'=> $_POST['categoria']
-      ];
-      $this->produtoModel1->cadastrar($dados);
+        // Convertendo o preço para um número decimal
+        $preco = floatval(str_replace(',', '.', $_POST['preco'])); // Converte ',' para '.' se houver
 
-      header('location: index.php');
-      exit;
+        $dados = [
+            'nome' => $_POST['nome'],
+            'descricao' => $_POST['descricao'],
+            'quantidade' => $_POST['quantidade'],
+            'preco' => $preco, // Usando o valor convertido
+            'cod_produto' => $_POST['cod_produto'],
+            'categoria' => $_POST['categoria']
+        ];
+        $this->produtoModel1->cadastrar($dados);
+
+        header('location: index.php');
+        exit;
     }
-  }
+}
   public function editarproduto(){
 
     $id_produto=$_GET['id_produto'];

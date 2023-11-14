@@ -51,25 +51,28 @@ class produto
      * @return bool
      */
     public function cadastrar($dados)
-    {
-        try {
-            $query = "INSERT INTO {$this->table} (nome, descricao , quantidade, preco, categoria, cod_produto) VALUES (:nome, :descricao, :quantidade, :preco, :categoria, :cod_produto)";
-            $stmt = $this->db->prepare($query);
-            $stmt->bindParam(':nome', $dados['nome']);
-            $stmt->bindParam(':descricao', $dados['descricao']);
-            $stmt->bindParam(':quantidade', $dados['quantidade']);
-            $stmt->bindParam(':preco', $dados['preco']);        
-            $stmt->bindParam(':categoria', $dados['categoria']);
-            $stmt->bindParam(':cod_produto', $dados['cod_produto']);
-            $stmt->execute();
-            $_SESSION['sucesso'] = "cadastro realizado com sucesso";
-            return true;
-        } catch (PDOException $e) {
-            echo "Erro ao cadastrar: " . $e->getMessage();
-            $_SESSION['erro'] = " erro ao cadastrar produto";
-            return false;
-        }
+{
+    try {
+        // Convertendo a string para um número decimal antes de inserir no banco de dados
+        $preco = floatval(str_replace(',', '.', $dados['preco'])); // Converte ',' para '.' se houver
+
+        $query = "INSERT INTO {$this->table} (nome, descricao, quantidade, preco, categoria, cod_produto) VALUES (:nome, :descricao, :quantidade, :preco, :categoria, :cod_produto)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':nome', $dados['nome']);
+        $stmt->bindParam(':descricao', $dados['descricao']);
+        $stmt->bindParam(':quantidade', $dados['quantidade']);
+        $stmt->bindParam(':preco', $preco); // Usando o valor convertido
+        $stmt->bindParam(':categoria', $dados['categoria']);
+        $stmt->bindParam(':cod_produto', $dados['cod_produto']);
+        $stmt->execute();
+        $_SESSION['sucesso'] = "cadastro realizado com sucesso";
+        return true;
+    } catch (PDOException $e) {
+        echo "Erro ao cadastrar: " . $e->getMessage();
+        $_SESSION['erro'] = " erro ao cadastrar produto";
+        return false;
     }
+}
 
     /** 
      * editar

@@ -34,9 +34,9 @@
         <div class="col-md-6">
             <label for="cpf" class="form-label">CPF</label>
             <input type="int" name="cpf" id="cpf" class="form-control" required>
+            <h9>digite seu CPF, com os pontos</h9>
 
         </div>
-
 
         <div class="col-md-6">
             <label for="endereco" class ="form-label">endereco</label>
