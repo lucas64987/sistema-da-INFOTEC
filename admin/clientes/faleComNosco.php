@@ -1,7 +1,7 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/cabecalho.php";
 require_once $_SERVER['DOCUMENT_ROOT']. "/includes/sugunda-barra.php";
 ?>
- 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,22 +15,22 @@ require_once $_SERVER['DOCUMENT_ROOT']. "/includes/sugunda-barra.php";
             align-items: center;
             height: 35vh;
         }
- 
+
         h1 {
             color: #001e8d;
             font-size: 30px;
         }
- 
+
         p {
             color: black;
             font-size: 20px;
         }
- 
+
         .redes-sociais {
             display: flex;
             align-items: center;
         }
- 
+
         .redes-sociais img {
             margin: 0 10px;
         }
@@ -52,5 +52,5 @@ require_once $_SERVER['DOCUMENT_ROOT']. "/includes/sugunda-barra.php";
     </div>
 </body>
 </html>
- 
+
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/rodape.php"; ?>

@@ -32,7 +32,7 @@
 
 
 
-    <a href="/admin/clientes/faleComNosco.php">FALE COM NOSCO</a>
+    <a href="faleComNosco.php">FALE COM NOSCO</a>
 
 
     <a href="faleComNosco.php">
