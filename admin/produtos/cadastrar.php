@@ -14,7 +14,7 @@
  <MAIN class="container mt-3 mb-3">
         <h1>cadastrar produto</h1>
 
-        <form action="cadastrar.php" method="post" class="row g-2">
+        <form action="cadastrar.php" method="post" class="row g-2"  enctype="multipart/form-data">
         <div class="col-md-12">
             <label for="nome" class ="form-label">Nome</label>
             <input type="text" name="nome" id="nome" class="form-control" required>
@@ -39,6 +39,11 @@
         <div class="col-md-6">
             <label for="cod_produto" class ="form-label">Cod_Produto</label>
             <input type="int" name="cod_produto" id="cod_produto" class="form-control"required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="capa" class="form-label">CAPA</label>
+            <input type="file" name="capa" id="capa" class="form-control">
         </div>
 
         <div class="col-md-8">

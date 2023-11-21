@@ -1,3 +1,17 @@
-#ola mundo{
-    height: 50px;
+/* Estilos para a tabela de produtos */
+.tabela-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas com larguras iguais */
+    gap: 20px; /* Espaço entre as colunas */
+}
+
+/* Estilos para cada item da tabela */
+.tabela-produtos tr {
+    display: contents; /* Os elementos <tr> se comportam como se não existissem */
+    grid-column: span 1; /* Cada linha ocupa 1 coluna */
+}
+
+/* Estilos para cada célula da tabela */
+.tabela-produtos td {
+    width: 100%; /* Cada célula ocupa 100% da largura da coluna */
 }

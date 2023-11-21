@@ -21,6 +21,7 @@
                 
                 <tr>
                     <th>#</th>
+                    <th>capa</th>
                     <th>nome</th>
                     <th>descricao</th>
                     <th>quantidade</th>
@@ -47,6 +48,7 @@
 
                 <tr>
                     <td><?=$dados->id_produto ?></td>
+                    <td><img src="/uploads/<?=$dados->capa ?>" width="100" ></td>
                     <td><?=$dados->nome ?></td>
                     <td><?=$dados->descricao ?></td>
                     <td><?=$dados->quantidade ?></td>

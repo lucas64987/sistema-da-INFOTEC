@@ -56,7 +56,7 @@ class produto
         // Convertendo a string para um número decimal antes de inserir no banco de dados
         $preco = floatval(str_replace(',', '.', $dados['preco'])); // Converte ',' para '.' se houver
 
-        $query = "INSERT INTO {$this->table} (nome, descricao, quantidade, preco, categoria, cod_produto) VALUES (:nome, :descricao, :quantidade, :preco, :categoria, :cod_produto)";
+        $query = "INSERT INTO {$this->table} (nome, descricao, quantidade, preco, categoria, cod_produto, capa) VALUES (:nome, :descricao, :quantidade, :preco, :categoria, :cod_produto, :capa)";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':nome', $dados['nome']);
         $stmt->bindParam(':descricao', $dados['descricao']);
@@ -64,6 +64,8 @@ class produto
         $stmt->bindParam(':preco', $preco); // Usando o valor convertido
         $stmt->bindParam(':categoria', $dados['categoria']);
         $stmt->bindParam(':cod_produto', $dados['cod_produto']);
+        $stmt->bindParam(':capa', $dados['capa']);
+    
         $stmt->execute();
         $_SESSION['sucesso'] = "cadastro realizado com sucesso";
         return true;
@@ -84,7 +86,7 @@ class produto
     {
         try {
             $sql = "UPDATE {$this->table} SET nome = :nome, descricao = :descricao,
-            quantidade = :quantidade, preco = :preco, categoria = :categoria, cod_produto = :cod_produto WHERE id_produto = :id_produto";
+            quantidade = :quantidade, preco = :preco, categoria = :categoria, cod_produto = :cod_produto, capa = :capa WHERE id_produto = :id_produto";
             $stmt = $this->db->prepare($sql);
 
             $stmt->bindParam(':nome', $dados['nome']);
@@ -93,7 +95,9 @@ class produto
             $stmt->bindParam(':preco', $dados['preco']);            
             $stmt->bindParam(':cod_produto', $dados['cod_produto']);
             $stmt->bindParam(':categoria', $dados['categoria']);
+            $stmt->bindParam(':capa', $dados['capa']);
             $stmt->bindParam('id_produto', $id_produto, PDO::PARAM_INT);
+
             $stmt->execute();
             $_SESSION['sucesso'] = "Produto editado com sucesso";
             return true;

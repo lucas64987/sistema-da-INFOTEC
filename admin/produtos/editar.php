@@ -26,7 +26,7 @@ $produto = $produtoController->editarproduto();
 
  
 
-    <form action="editar.php?id_produto=<?=$produto->id_produto ?>" method="post" class="row g-3">
+    <form action="editar.php?id_produto=<?=$produto->id_produto ?>" method="post" class="row g-3"  enctype="multipart/form-data">
 
         <div class="col-md-12">
 
@@ -66,6 +66,11 @@ $produto = $produtoController->editarproduto();
 
             <input type="int" name="cod_produto" id="cod_produto" class="form-control"required value="<?=  $produto->cod_produto?>">
 
+        </div>
+
+        <div class="col-md-6">
+            <label for="capa" class="form-label">CAPA</label>
+            <input type="file" name="capa" id="capa" class="form-control">
         </div>
 
 
