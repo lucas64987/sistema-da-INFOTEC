@@ -89,7 +89,7 @@ public function editarproduto(){
      ];
 
      if(isset($_FILES['capa']['name']) && !empty($_FILES['capa']['name'])) {
-      $fileinfo = pathinfo($_FILES['']['name']);
+      $fileinfo = pathinfo($_FILES['capa']['name']);
      
       //gera um novo nome aleatorio
       $nomearquivo = md5(uniqid());
